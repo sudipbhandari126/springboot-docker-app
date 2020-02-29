@@ -18,7 +18,7 @@ jobs:
         username: '{{secrets.DOCKER_HUB_USERNAME}}'
         password: '{{secrets.DOCKER_HUB_PASSWORD}}'
     - name: tag docker image
-      run: docker tag springboot-docker-app:$GITHUB_SHA '{{secrets.DOCKER_HUB_USERNAME}}/springboot-docker-app:$GITHUB_SHA'
+      run: docker tag springboot-docker-app:$GITHUB_SHA {{secrets.DOCKER_HUB_USERNAME}}/springboot-docker-app:$GITHUB_SHA
     - name : docker push
       run: docker push {{secrets.DOCKER_HUB_USERNAME}}/springboot-docker-app:$GITHUB_SHA 
     
