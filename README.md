@@ -1,3 +1,5 @@
+![Conitnuous-Integration](https://github.com/sudipbhandari126/springboot-docker-app/workflows/CI/badge.svg)
+
 ### Getting Started
 
 - ```git clone git@github.com:sudipbhandari126/springboot-docker-app.git```
