@@ -21,4 +21,6 @@ jobs:
         password: '{{secrets.DOCKER_HUB_PASSWORD}}'
     - name : docker push
       run: docker push sudipbhandari/springboot-docker-app:$GITHUB_SHA 
+    - name: clean up
+      run: rm ~/.docker/config.json
     
