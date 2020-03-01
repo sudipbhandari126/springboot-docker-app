@@ -9,16 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: run docker-build
-      run: ./docker-build springboot-docker-app:$GITHUB_SHA
+    - name: run docker-build with tag
+      run: ./docker-build sudipbhandari/springboot-docker-app:$GITHUB_SHA
     - name: Docker Login
       uses: Azure/docker-login@v1
       with:
         login-server: 'index.docker.io'
         username: '{{secrets.DOCKER_HUB_USERNAME}}'
         password: '{{secrets.DOCKER_HUB_PASSWORD}}'
-    - name: tag docker image
-      run: docker tag springboot-docker-app:$GITHUB_SHA docker.io/sudipbhandari/springboot-docker-app:$GITHUB_SHA
     - name : docker push
       run: docker push docker.io/sudipbhandari/springboot-docker-app:$GITHUB_SHA 
     
