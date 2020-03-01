@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: clean all the images
+      run: docker images prune -a
     - name: Docker Login
       uses: Azure/docker-login@v1
       with:
