@@ -20,5 +20,5 @@ jobs:
         username: '{{secrets.DOCKER_HUB_USERNAME}}'
         password: '{{secrets.DOCKER_HUB_PASSWORD}}'
     - name : docker push
-      run: docker push docker.io/sudipbhandari/springboot-docker-app:$GITHUB_SHA 
+      run: docker push springboot-docker-app:$GITHUB_SHA 
     
