@@ -16,11 +16,11 @@ jobs:
         username: '{{secrets.DOCKER_HUB_USERNAME}}'
         password: '{{secrets.DOCKER_HUB_PASSWORD}}'
     - name: run docker-build with tag
-      run: ./docker-build sudipbhandari/springboot-docker-app:${{ github.sha }}
+      run: ./docker-build sudipbhandari/springboot-docker-app:latest
     - name: list docker images
       run: docker image ls
     - name : docker push
-      run: docker push docker.io/sudipbhandari/springboot-docker-app:${{ github.sha }}
+      run: docker push docker.io/sudipbhandari/springboot-docker-app:latest
     - name: clean up
       run: rm ~/.docker/config.json
     
