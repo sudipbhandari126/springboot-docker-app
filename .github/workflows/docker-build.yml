@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: run docker-build with tag
-      run: ./docker-build sudipbhandari/springboot-docker-app:$GITHUB_SHA
+      run: ./docker-build sudipbhandari/springboot-docker-app:${{ github.sha }}
     - name: list docker images
       run: docker image ls
     - name: Docker Login
